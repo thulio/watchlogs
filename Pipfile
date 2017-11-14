@@ -13,6 +13,8 @@ flask = "*"
 
 [dev-packages]
 
+mock = {version = "*", markers = "python_version < '3.4'"}
 pytest = "*"
 pytest-cov = "*"
 pytest-xdist = "*"
+pytest-watch = "*"
