@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0aa19c85921d72ace9452a8b67ae92820769772f5f1d3ee9982d88ea864ace74"
+            "sha256": "5c3b188e0f13cf1e066eae7ad199b3d1e99e31b432e419eed2ed6d8b12ead3c5"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -17,9 +17,7 @@
             "sys_platform": "darwin"
         },
         "pipfile-spec": 6,
-        "requires": {
-            "python_version": "3.6"
-        },
+        "requires": {},
         "sources": [
             {
                 "name": "pypi",
@@ -121,6 +119,13 @@
         }
     },
     "develop": {
+        "apipkg": {
+            "hashes": [
+                "sha256:65d2aa68b28e7d31233bb2ba8eb31cda40e4671f8ac2d6b241e358c9652a74b9",
+                "sha256:2e38399dbe842891fe85392601aab8f40a8f4cc5a9053c326de35a1cc0297ac6"
+            ],
+            "version": "==1.4"
+        },
         "coverage": {
             "hashes": [
                 "sha256:d1ee76f560c3c3e8faada866a07a32485445e16ed2206ac8378bd90dadffb9f0",
@@ -166,6 +171,13 @@
             ],
             "version": "==4.4.2"
         },
+        "execnet": {
+            "hashes": [
+                "sha256:fc155a6b553c66c838d1a22dba1dc9f5f505c43285a878c6f74a79c024750b83",
+                "sha256:a7a84d5fa07a089186a329528f127c9d73b9de57f1a1131b82bb5320ee651f6a"
+            ],
+            "version": "==1.5.0"
+        },
         "py": {
             "hashes": [
                 "sha256:2ccb79b01769d99115aa600d7eed99f524bf752bba8f041dc1c184853514655a",
@@ -186,6 +198,20 @@
                 "sha256:03aa752cf11db41d281ea1d807d954c4eda35cfa1b21d6971966cc041bbf6e2d"
             ],
             "version": "==2.5.1"
+        },
+        "pytest-forked": {
+            "hashes": [
+                "sha256:f275cb48a73fc61a6710726348e1da6d68a978f0ec0c54ece5a5fae5977e5a08",
+                "sha256:e4500cd0509ec4a26535f7d4112a8cc0f17d3a41c29ffd4eab479d2a55b30805"
+            ],
+            "version": "==0.2"
+        },
+        "pytest-xdist": {
+            "hashes": [
+                "sha256:997ed2d6ed487fc41e16b5a0d00b944574a2f635375ee7fbea6a1d6b3876e2cd",
+                "sha256:433e82f9b34986a4e4b2be38c60e82cca3ac64b7e1b38f4d8e3e118292939712"
+            ],
+            "version": "==1.20.1"
         }
     }
 }

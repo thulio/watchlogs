@@ -15,8 +15,4 @@ flask = "*"
 
 pytest = "*"
 pytest-cov = "*"
-
-
-[requires]
-
-python_version = "3.6"
+pytest-xdist = "*"

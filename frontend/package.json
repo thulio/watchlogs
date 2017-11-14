@@ -1,0 +1,19 @@
+{
+  "name": "watchlogs",
+  "version": "0.1.0",
+  "description": "Better UI for AWS CloudWatch logs",
+  "main": "index.js",
+  "repository": "https://github.com/thulio/watchlogs",
+  "author": "Thúlio Costa",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "cross-fetch": "^1.1.1",
+    "react": "^16.1.1",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2"
+  },
+  "devDependencies": {
+    "jest": "^21.2.1"
+  }
+}
