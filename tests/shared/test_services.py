@@ -40,3 +40,38 @@ class TestCloudWatchService(unittest.TestCase):
 
             self.assertEqual(mock_boto.client.call_count, 1)
             self.assertEqual(mock_boto.client.call_args_list, [mock.call('logs')])
+
+    def test_fetch_stream_without_token(self):
+        client = mock.Mock()
+        client.get_log_events.return_value = {
+            'messages': ['Stream message']
+        }
+
+        service = CloudWatchService()
+        service._client = client
+
+        messages = service.fetch_stream('some-group', 'some-stream')
+
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(client.get_log_events.call_count, 1)
+        self.assertEqual(client.get_log_events.call_args_list, [mock.call(logGroupName='some-group',
+                                                                          logStreamName='some-stream',
+                                                                          startFromHead=True)])
+
+    def test_fetch_stream_with_token(self):
+        client = mock.Mock()
+        client.get_log_events.return_value = {
+            'messages': ['Stream message']
+        }
+
+        service = CloudWatchService()
+        service._client = client
+
+        messages = service.fetch_stream('some-group', 'some-stream', 'next-token')
+
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(client.get_log_events.call_count, 1)
+        self.assertEqual(client.get_log_events.call_args_list, [mock.call(logGroupName='some-group',
+                                                                          logStreamName='some-stream',
+                                                                          nextToken='next-token',
+                                                                          startFromHead=True)])
