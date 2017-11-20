@@ -14,3 +14,13 @@ class TestGroupRepository(unittest.TestCase):
             self.assertEqual(groups, ['group-a', 'group-b'])
             self.assertEqual(mock_service.list_groups.call_count, 1)
             self.assertEqual(mock_service.list_groups.call_args_list, [mock.call()])
+
+    def test_list_groups_with_token(self):
+        with mock.patch('server.repositories.group_repository.cloudwatch') as mock_service:
+            mock_service.list_groups.return_value = ['group-a', 'group-b']
+
+            groups = list_groups('next-token')
+
+            self.assertEqual(groups, ['group-a', 'group-b'])
+            self.assertEqual(mock_service.list_groups.call_count, 1)
+            self.assertEqual(mock_service.list_groups.call_args_list, [mock.call('next-token')])

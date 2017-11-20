@@ -13,7 +13,7 @@ class TestStreamRepository(unittest.TestCase):
 
             self.assertEqual(streams, ['stream-a', 'stream-b'])
             self.assertEqual(mock_service.list_streams.call_count, 1)
-            self.assertEqual(mock_service.list_streams.call_args_list, [mock.call('some-group')])
+            self.assertEqual(mock_service.list_streams.call_args_list, [mock.call('some-group', None)])
 
     def test_fetch_stream_from_beggining(self):
         with mock.patch('server.repositories.stream_repository.cloudwatch') as mock_service:
